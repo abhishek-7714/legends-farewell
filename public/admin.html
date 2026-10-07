@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Legends admin</title>
+  <link rel="icon" href="/img/icon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body class="admin">
+  <header class="ad-top">
+    <a class="logo" href="/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 7h-6zM12 22l-3-7h6zM2 12l7-3v6zM22 12l-7 3V9z" fill="currentColor"/></svg>LEGENDS · ADMIN</a>
+    <span class="ad-live" id="live">● live</span>
+  </header>
+  <main class="ad-main">
+    <section class="ad-hero">
+      <div class="ad-count"><strong id="count-sub">–</strong><span>/ <span id="count-total">–</span> Legends have voted</span></div>
+      <div class="ad-meter"><div id="meter-fill"></div></div>
+      <div class="ad-actions">
+        <label class="switch">
+          <input type="checkbox" id="voting-toggle">
+          <span class="switch-ui" aria-hidden="true"></span>
+          <span id="voting-label">Voting open</span>
+        </label>
+        <a class="btn btn-primary" href="/api/admin/export.csv" id="csv-btn">⬇ Download palcard CSV</a>
+        <button class="btn btn-ghost" id="refresh-btn" type="button">Refresh</button>
+      </div>
+    </section>
+
+    <nav class="ad-tabs" role="tablist">
+      <button role="tab" aria-selected="true" data-tab="leaderboard">Leaderboard</button>
+      <button role="tab" aria-selected="false" data-tab="taglines">Taglines</button>
+      <button role="tab" aria-selected="false" data-tab="notes">Notes</button>
+      <button role="tab" aria-selected="false" data-tab="people">Who voted</button>
+    </nav>
+
+    <section class="ad-panel" id="tab-leaderboard" role="tabpanel"></section>
+    <section class="ad-panel" id="tab-taglines" role="tabpanel" hidden>
+      <input class="ad-search" id="tl-search" type="search" placeholder="Filter by name or text…">
+      <label class="ad-check"><input type="checkbox" id="tl-only-with"> Only people with taglines</label>
+      <div id="tl-list"></div>
+    </section>
+    <section class="ad-panel" id="tab-notes" role="tabpanel" hidden></section>
+    <section class="ad-panel" id="tab-people" role="tabpanel" hidden></section>
+    <p class="ad-error" id="error" hidden></p>
+  </main>
+  <script type="module" src="/js/admin.js"></script>
+</body>
+</html>

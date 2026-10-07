@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Legends · What's really inside a Legend?</title>
+  <meta name="description" content="Six months, sixty Legends, one section. Scroll the story, then vote the awards.">
+  <meta name="theme-color" content="#0b3a41">
+  <!-- WhatsApp / social preview -->
+  <meta property="og:title" content="What's really inside a Legend?">
+  <meta property="og:description" content="Six months, sixty Legends, one section. Scroll the story, then vote the awards.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="/img/og.png">
+  <link rel="icon" href="/img/icon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/story.css">
+  <link rel="stylesheet" href="/css/survey.css">
+</head>
+<body>
+  <a class="visually-hidden" href="#survey">Skip to the awards survey</a>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="topbar" id="topbar">
+    <a class="logo" href="#top" aria-label="Legends, back to top">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 7h-6zM12 22l-3-7h6zM2 12l7-3v6zM22 12l-7 3V9z" fill="currentColor"/></svg>
+      <span id="logo-text">LEGENDS</span>
+    </a>
+  </header>
+
+  <main id="top">
+    <div id="story"></div>
+    <section class="survey" id="survey" aria-labelledby="survey-title">
+      <noscript><p>The survey needs JavaScript. Even Excel needs macros sometimes.</p></noscript>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="footer"></footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script type="module" src="/js/main.js"></script>
+</body>
+</html>

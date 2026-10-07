@@ -1,0 +1,17 @@
+node_modules/
+.env
+reference/frames/
+reference/sheets/
+our-frames/
+*.log
+.dev/
+
+# Not needed to run the site, and must not be uploaded:
+# the class directory has DOBs, photos and employers; photos/ holds the
+# full-size originals (web-sized copies live in public/img/memories/).
+Section L.pdf
+*.pdf
+photos/
+# Reference recording of a third-party site (only used to write MOTION.md)
+reference/
+.DS_Store

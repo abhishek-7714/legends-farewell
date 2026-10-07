@@ -1,0 +1,128 @@
+/* ---------- Tokens ------------------------------------------------------ */
+:root {
+  --navy: #0b3a41;
+  --navy-2: #0e4750;
+  --peri: #c9d2f5;
+  --peri-2: #b7c3f0;
+  --green: #14684a;
+  --pink: #ec5fae;
+  --orange: #ee6a2c;
+  --blue: #3f6cf0;
+  --yellow: #f6e65b;
+  --cream: #fbf1de;
+  --ink: #0b3a41;
+  --white: #ffffff;
+  --dim-on-navy: rgba(251, 241, 222, 0.32);
+  --dim-on-peri: rgba(11, 58, 65, 0.3);
+
+  --font-display: 'Oswald', 'Arial Narrow', 'Roboto Condensed', sans-serif-condensed, sans-serif;
+  --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+  --radius: 14px;
+  --gutter: clamp(16px, 4vw, 48px);
+  --nav-h: 56px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-padding-top: var(--nav-h); }
+body {
+  margin: 0;
+  background: var(--navy);
+  color: var(--cream);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.5;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+img, svg { display: block; max-width: 100%; }
+button, input, textarea { font: inherit; color: inherit; }
+a { color: inherit; }
+[hidden] { display: none !important; }
+
+.visually-hidden {
+  position: absolute !important; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap;
+}
+
+/* ---------- Grain overlay ------------------------------------------------ */
+.grain {
+  position: fixed; inset: 0;
+  pointer-events: none;
+  z-index: 100;
+  opacity: 0.14;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .5 0 0 0 0 .5 0 0 0 0 .5 0 0 0 1.6 -.55'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  mix-blend-mode: overlay;
+}
+
+/* ---------- Type --------------------------------------------------------- */
+.display {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 0.95;
+  margin: 0;
+  text-wrap: balance;
+}
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: 12px; font-weight: 600;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  opacity: 0.75; margin: 0 0 12px;
+}
+.hl { color: var(--yellow); }
+.placeholder-mark { background: rgba(246, 230, 91, .18); outline: 1px dashed rgba(246, 230, 91, .6); border-radius: 3px; padding: 0 .15em; }
+
+/* ---------- Top bar ------------------------------------------------------ */
+.topbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+  height: var(--nav-h);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 var(--gutter);
+  color: var(--cream);
+  transition: transform .3s ease, background-color .3s;
+}
+/* Like the reference, the bar sits on the hero; past it, it hides on scroll
+   down and comes back as a solid bar on scroll up. */
+.topbar.is-scrolled { background: var(--navy); }
+.topbar.is-hidden { transform: translateY(-100%); }
+.topbar::after {
+  content: ''; position: absolute; left: var(--gutter); right: var(--gutter); bottom: 0;
+  height: 1px; background: currentColor; opacity: .15;
+}
+.logo {
+  display: flex; align-items: center; gap: 8px;
+  font-family: var(--font-body); font-weight: 800; font-size: 14px; letter-spacing: .08em;
+  text-decoration: none;
+}
+.logo svg { width: 18px; height: 18px; }
+
+/* ---------- Buttons ------------------------------------------------------ */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  min-height: 48px; padding: 0 22px;
+  border-radius: 999px; border: 2px solid transparent;
+  font-weight: 700; font-size: 15px; cursor: pointer;
+  transition: transform .15s, background-color .15s, opacity .15s;
+  text-decoration: none;
+}
+.btn:active { transform: scale(.97); }
+.btn:disabled { opacity: .4; cursor: not-allowed; }
+.btn-primary { background: var(--pink); color: var(--white); }
+.btn-primary:hover:not(:disabled) { background: #f474bd; }
+.btn-ghost { background: transparent; border-color: currentColor; }
+.btn-link { background: none; border: 0; text-decoration: underline; text-underline-offset: 3px; padding: 0 8px; font-weight: 600; opacity: .8; }
+.btn-big { min-height: 56px; font-size: 17px; padding: 0 30px; }
+:focus-visible { outline: 3px solid var(--yellow); outline-offset: 2px; }
+
+.confetti-canvas { position: fixed; inset: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 200; }
+
+/* ---------- Footer ------------------------------------------------------- */
+.site-footer {
+  position: relative; z-index: 2;
+  background: var(--navy);
+  padding: 18vh var(--gutter) 40px;
+  text-align: center;
+}
+.site-footer .display { font-size: clamp(40px, 8vw, 110px); color: var(--cream); max-width: 14ch; margin: 0 auto; }
+.site-footer p.credit { margin-top: 12vh; font-size: 13px; opacity: .6; }

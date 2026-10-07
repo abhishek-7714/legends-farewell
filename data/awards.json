@@ -1,0 +1,89 @@
+{
+  "_readme": "Up to 15 awards. 'id' must stay stable once voting starts (votes are stored against it). 'title' is max 3 words, 'description' is one line. 'emoji' is optional.",
+  "awards": [
+    {
+      "id": "cp-farmer",
+      "emoji": "🌾",
+      "title": "CP Farmer",
+      "description": "Harvests class participation marks from every crop, in every season."
+    },
+    {
+      "id": "humbled-honoured",
+      "emoji": "🙏",
+      "title": "Humbled and Honoured",
+      "description": "Starts every LinkedIn post feeling this, ends every LinkedIn post feeling this."
+    },
+    {
+      "id": "1159-club",
+      "emoji": "⏰",
+      "title": "11:59 Club",
+      "description": "Has never submitted anything with more than 60 seconds to spare."
+    },
+    {
+      "id": "silent-partner",
+      "emoji": "🤫",
+      "title": "Silent Partner",
+      "description": "Name on the group deck. Location unknown."
+    },
+    {
+      "id": "framework-messiah",
+      "emoji": "📐",
+      "title": "Framework Messiah",
+      "description": "Can turn ordering lunch into a 2x2 matrix."
+    },
+    {
+      "id": "proxy-pujari",
+      "emoji": "🙋",
+      "title": "Proxy Ka Pujari",
+      "description": "Present in spirit, present in register, absent in body."
+    },
+    {
+      "id": "sleeping-beauty",
+      "emoji": "😴",
+      "title": "Sleeping Beauty",
+      "description": "Mastered sleeping with eyes open in the third row."
+    },
+    {
+      "id": "one-small-question",
+      "emoji": "✋",
+      "title": "One Small Question",
+      "description": "The question was neither small nor one."
+    },
+    {
+      "id": "jargon-juggernaut",
+      "emoji": "🗣️",
+      "title": "Jargon Juggernaut",
+      "description": "Will leverage synergies to circle back on your low-hanging fruit."
+    },
+    {
+      "id": "chief-party-officer",
+      "emoji": "🎉",
+      "title": "Chief Party Officer",
+      "description": "Plans the night out before the syllabus is out."
+    },
+    {
+      "id": "pivot-royalty",
+      "emoji": "🔄",
+      "title": "Pivot King/Queen",
+      "description": "Changed career goals more often than WhatsApp DP."
+    },
+    {
+      "id": "whatsapp-nobel",
+      "emoji": "📱",
+      "title": "WhatsApp Nobel",
+      "description": "Forwarded more messages than the group could ever read."
+    },
+    {
+      "id": "placement-pandit",
+      "emoji": "🔮",
+      "title": "Placement Pandit",
+      "description": "Knew every shortlist before the company did."
+    },
+    {
+      "id": "maggi-messiah",
+      "emoji": "🍜",
+      "title": "Maggi Messiah",
+      "description": "Two minutes for Maggi, two hours of gyaan while eating it."
+    }
+  ]
+}

@@ -1,0 +1,371 @@
+{
+  "_readme": "All the words on the site. Edit freely. Anything in [PLACEHOLDER ...] is waiting for a real name, number or inside joke. In headlines, wrap a word in *asterisks* to make it yellow.",
+  "meta": {
+    "title": "Legends · What's really inside a Legend?",
+    "description": "Six months, sixty-nine Legends, one section. Scroll the story, then vote the awards."
+  },
+  "nav": {
+    "logo": "LEGENDS"
+  },
+  "sections": {
+    "hero": {
+      "kicker": "Section Legends · Class of 2027 · 6 months, 69 people, 1 group chat",
+      "headline": "What's really inside a Legend?",
+      "scrollCue": "Scroll to dissect",
+      "elements": [
+        {
+          "symbol": "Cf",
+          "name": "Caffeine",
+          "number": 1,
+          "color": "yellow",
+          "x": 6,
+          "y": 22,
+          "tilt": -12,
+          "depth": 1.4
+        },
+        {
+          "symbol": "Mg",
+          "name": "Maggi",
+          "number": 2,
+          "color": "orange",
+          "x": 83,
+          "y": 16,
+          "tilt": 10,
+          "depth": 1.8
+        },
+        {
+          "symbol": "Px",
+          "name": "Proxy",
+          "number": 3,
+          "color": "blue",
+          "x": 14,
+          "y": 58,
+          "tilt": 8,
+          "depth": 1.2
+        },
+        {
+          "symbol": "Dk",
+          "name": "Deck",
+          "number": 4,
+          "color": "pink",
+          "x": 78,
+          "y": 52,
+          "tilt": -9,
+          "depth": 1.6
+        },
+        {
+          "symbol": "Cp",
+          "name": "Class Participation",
+          "number": 5,
+          "color": "peri",
+          "x": 30,
+          "y": 9,
+          "tilt": -6,
+          "depth": 2.0
+        },
+        {
+          "symbol": "Zz",
+          "name": "Sleep (rarely found)",
+          "number": 0,
+          "color": "green",
+          "x": 64,
+          "y": 74,
+          "tilt": 14,
+          "depth": 1.3
+        },
+        {
+          "symbol": "Wf",
+          "name": "Wi-Fi (unstable)",
+          "number": 7,
+          "color": "yellow",
+          "x": 90,
+          "y": 80,
+          "tilt": -16,
+          "depth": 1.1,
+          "desktopOnly": true
+        },
+        {
+          "symbol": "Gs",
+          "name": "Gossip",
+          "number": 8,
+          "color": "pink",
+          "x": 3,
+          "y": 84,
+          "tilt": 11,
+          "depth": 1.5,
+          "desktopOnly": true
+        }
+      ]
+    },
+    "price": {
+      "headline": "When six months come at a price.",
+      "body": "Every Legend you see paid for it: in sleep, in coffee, in dignity during cold calls. Here's the bill, itemised, GST extra."
+    },
+    "stats": {
+      "label": "The bill",
+      "cards": [
+        {
+          "value": "6",
+          "unit": "months",
+          "caption": "that felt like 2 weeks and 4 years at the same time",
+          "color": "pink"
+        },
+        {
+          "value": "69",
+          "unit": "legends",
+          "caption": "one section, zero chill, uncountable attendance shortages",
+          "color": "orange"
+        },
+        {
+          "value": "1",
+          "unit": "coffee machine",
+          "caption": "vs. 69 Legends sprinting to be first in line. Olympic trials, basically.",
+          "color": "blue"
+        },
+        {
+          "value": "10k+",
+          "unit": "WhatsApp messages",
+          "caption": "40 actually read. Generous estimate.",
+          "color": "yellow"
+        },
+        {
+          "value": "1",
+          "unit": "group project",
+          "caption": "that ended a friendship (temporarily)",
+          "color": "peri"
+        },
+        {
+          "value": "0",
+          "unit": "submissions",
+          "caption": "before 11:58 PM. Not one. Ever.",
+          "color": "cream"
+        }
+      ]
+    },
+    "didYouKnow": {
+      "kicker": "Did you know?",
+      "fact": "One 90-minute case discussion produces *2.5 million litres* of “building on what X said”. That's an Olympic-sized swimming pool.",
+      "footnote": "Source: our CP tracker. Peer review pending."
+    },
+    "roast": {
+      "headline": "Our section paid the price.",
+      "cards": [
+        {
+          "icon": "midterms",
+          "title": "Mid-terms",
+          "text": "Three weeks of syllabus, one night of prep, infinite faith in the curve."
+        },
+        {
+          "icon": "coldcall",
+          "title": "Cold calls",
+          "text": "“Let's hear from someone who hasn't spoken.” Sixty-nine people discovered their shoelaces."
+        },
+        {
+          "icon": "placement",
+          "title": "Placement season",
+          "text": "Everyone was “just exploring options”. Everyone had a 47-tab Excel tracker."
+        },
+        {
+          "icon": "mess",
+          "title": "The mess food",
+          "text": "Same dal, new name every day. Wednesday's “paneer” remains under investigation."
+        },
+        {
+          "icon": "group",
+          "title": "Group projects",
+          "text": "Five members, two who worked, one Drive file called final_FINAL_v7."
+        },
+        {
+          "icon": "morning",
+          "title": "8:30 AM classes",
+          "text": "Physically present. Spiritually still in bed. Attendance: by proxy."
+        }
+      ]
+    },
+    "havoc": {
+      "headline": "Legends wreak havoc on campus",
+      "center": "Damage: irreversible. Worth it.",
+      "hotspots": [
+        {
+          "id": "library",
+          "title": "LRC",
+          "label": "Booked for “group study”. Used for group naps."
+        },
+        {
+          "id": "mess",
+          "title": "Mess",
+          "label": "Rated the food 2/5 in feedback. Went back for thirds."
+        },
+        {
+          "id": "canteen",
+          "title": "Jujus",
+          "label": "Where the real strategy happened. Midnight board meetings over Maggi."
+        },
+        {
+          "id": "backrow",
+          "title": "Classroom back row",
+          "label": "Unofficial Legends HQ. Wi-Fi strongest, attention weakest."
+        }
+      ]
+    },
+    "memories": {
+      "headline": "But somewhere between the deadlines…",
+      "subhead": "…sixty-nine strangers became a section.",
+      "items": [
+        {
+          "image": "/img/memories/first-ever.jpg",
+          "caption": "The first ever Legends photo: matching O-Week tees, tiny flags, and 69 strangers with no idea what was coming."
+        },
+        {
+          "image": "/img/memories/first-photo.jpg",
+          "caption": "Where it all began, dressed up: the first time we looked like we had our lives together. It didn't last."
+        },
+        {
+          "image": "/img/memories/pink-wednesday.jpg",
+          "caption": "On Wednesdays we wear pink. Attendance: 100%, for once."
+        },
+        {
+          "image": "/img/memories/post-mvcm.jpg",
+          "caption": "Post-MVCM: the day we finally learnt what DCP actually is. Only took us half the term."
+        },
+        {
+          "image": "/img/memories/kulche.jpg",
+          "caption": "80 plates of kulche, 1000 decibels of noise, and one very brave waiter."
+        },
+        {
+          "image": "/img/memories/water-polo.jpg",
+          "caption": "We won one game of water polo. One. We will be talking about it until the end of time."
+        },
+        {
+          "image": "/img/memories/potluck.jpg",
+          "caption": "Potluck: biryani, jungle juice, a live dosa counter. Our best group project, and nobody was a silent partner."
+        },
+        {
+          "image": "/img/memories/pre-party.jpg",
+          "caption": "The pre-party, which somehow always outlasted the party."
+        },
+        {
+          "image": "/img/memories/bira.jpg",
+          "caption": "Bira Taproom, where “just one drink” was a forward-looking statement."
+        }
+      ],
+      "passage": [
+        "Six months ago we were sixty-nine strangers with name tents and LinkedIn-ready introductions.",
+        "Somewhere between the case packs and the cold calls, between 2 AM Maggi and 11:59 PM submissions, the name tents stopped mattering. We learnt each other's coffee orders, each other's panic faces, each other's one joke that always works.",
+        "From here on it's electives and new sections: same campus, different classrooms, and never again all sixty-nine of us in one room. No new group chat will ever be this unhinged. But every time someone in class says “building on that…”, a Legend two rooms away is going to smile.",
+        "“Do you see what I see?” Yes: the worst chant ever written. We'll still scream it across campus every time we spot each other.",
+        "Thank you for these six months. It was a privilege to be this tired with you."
+      ]
+    },
+    "legacy": {
+      "headline": "Be part of the legacy.",
+      "body": "Same campus, different classrooms, and never one common class again. Before the timetables split us up, leave your mark. Votes become awards, taglines become palcards, and notes become the thing we reread when the new group chats get too quiet.",
+      "cards": [
+        {
+          "goto": "awards",
+          "icon": "trophy",
+          "theme": "white",
+          "title": "Vote for the awards",
+          "text": "14 awards, one Legend each. Choose wisely, or chaotically.",
+          "cta": "Start voting →"
+        },
+        {
+          "goto": "taglines",
+          "icon": "tag",
+          "theme": "green",
+          "title": "Give your friends a tagline",
+          "text": "Max 60 characters. It goes on their palcard. Forever.",
+          "cta": "Write taglines →"
+        },
+        {
+          "goto": "note",
+          "icon": "note",
+          "theme": "white",
+          "title": "Leave a note for the section",
+          "text": "Private. Only the organiser reads it. Make it count.",
+          "cta": "Write a note →"
+        }
+      ]
+    }
+  },
+  "survey": {
+    "eyebrow": "The Legends Awards · Official-ish",
+    "title": "Cast your votes",
+    "intro": "Six months of evidence. Fourteen awards. Zero accountability. Takes about 4 minutes, roughly one cold call.",
+    "closed": "Voting is closed. The Legends have spoken. Results on the palcards.",
+    "dbMissing": "The survey is not connected to a database yet. Tell the admin (they will know what this means).",
+    "steps": {
+      "who": {
+        "label": "Who's this?",
+        "title": "First, who are you?",
+        "help": "Pick your own name. We trust you. Mostly.",
+        "placeholder": "Search your name…",
+        "returning": "Welcome back, {name}. Your earlier votes are loaded. Edit away.",
+        "locked": "{name} already voted from another phone. Use that phone to edit, or ask the admin to reset it.",
+        "notYou": "Not you?"
+      },
+      "awards": {
+        "label": "Awards",
+        "title": "The awards",
+        "help": "One classmate per award. All optional. Skip any you can't decide. Diplomacy is also a skill.",
+        "placeholder": "Pick a Legend…",
+        "skip": "Skip this one",
+        "next": "Next award",
+        "prev": "Back",
+        "counter": "Award {n} of {total}",
+        "picked": "Locked in: {name}",
+        "selfBlocked": "You're not on this list. Nice try."
+      },
+      "taglines": {
+        "label": "Taglines",
+        "title": "Give your friends a tagline",
+        "help": "Short, savage, kind at heart. These go on their palcards, so max {max} characters. Nothing about looks, bodies, background or relationships. Roast the deeds, not the person.",
+        "friendPlaceholder": "Pick a friend…",
+        "taglinePlaceholder": "e.g. Man of Steal",
+        "add": "+ Add another",
+        "remove": "Remove",
+        "selfTitle": "And one for yourself (optional)",
+        "selfPlaceholder": "e.g. Me apni khud ki fav hu",
+        "examples": [
+          "Man of Steal",
+          "Me apni khud ki fav hu",
+          "Excel ka Eklavya",
+          "Building on what I said earlier",
+          "Present, sir (via proxy)"
+        ]
+      },
+      "note": {
+        "label": "Note",
+        "title": "Leave a note for the section",
+        "help": "Optional. Private. Only the organiser reads it. Say the thing you'd never say on the group.",
+        "placeholder": "Dear Legends…"
+      },
+      "review": {
+        "label": "Submit",
+        "title": "Final answer?",
+        "help": "You can come back on this phone and edit until voting closes.",
+        "awardsCount": "{n} of {total} awards voted",
+        "taglinesCount": "{n} taglines written",
+        "noteYes": "Note included",
+        "noteNo": "No note (mysterious)",
+        "submit": "Submit my votes",
+        "update": "Update my votes",
+        "submitting": "Counting your votes like a placement committee…"
+      }
+    },
+    "done": {
+      "title": "Votes locked. Legend behaviour.",
+      "body": "Your votes are in. Come back on this phone any time before voting closes to change your mind (you will).",
+      "edit": "Edit my votes",
+      "share": "Now go nag the people who haven't voted on the group."
+    },
+    "nav": {
+      "next": "Next",
+      "back": "Back"
+    }
+  },
+  "footer": {
+    "line": "Legends never graduate. They just get worse Wi-Fi.",
+    "credit": ""
+  }
+}

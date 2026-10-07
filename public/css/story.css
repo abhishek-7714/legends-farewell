@@ -1,0 +1,281 @@
+/* =========================================================================
+   Story sections. Base rules = static layout (also the reduced-motion layout).
+   html.motion rules at the bottom turn sections into pinned scroll scenes.
+   ========================================================================= */
+
+.scene { position: relative; }
+.scene-stage { position: relative; }
+
+/* ---------- Reveal headline -------------------------------------------- */
+.reveal .w { display: inline-block; white-space: nowrap; }
+.reveal .c { display: inline-block; }
+.reveal .hl { color: var(--yellow); }
+
+/* ---------- Periodic tiles ---------------------------------------------- */
+.tile {
+  position: absolute;
+  width: clamp(54px, 7vw, 92px); aspect-ratio: 1;
+  border-radius: 10px;
+  display: grid; grid-template-rows: auto 1fr auto; padding: 6px 7px;
+  transform: rotate(var(--tilt));
+  box-shadow: inset 0 -5px 0 rgba(0,0,0,.12), 0 10px 24px rgba(0,0,0,.25);
+  color: var(--ink);
+  font-family: var(--font-body);
+  user-select: none;
+}
+.tile-num { font-size: clamp(9px, 1vw, 12px); font-weight: 700; opacity: .7; line-height: 1; }
+.tile-sym { font-family: var(--font-display); font-weight: 600; font-size: clamp(24px, 3.2vw, 42px); line-height: 1; align-self: center; justify-self: center; }
+.tile-name { font-size: clamp(7px, .75vw, 10px); font-weight: 700; line-height: 1.1; text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.tile-yellow { background: var(--yellow); }
+.tile-orange { background: var(--orange); color: var(--cream); }
+.tile-blue { background: var(--blue); color: var(--cream); }
+.tile-pink { background: var(--pink); color: var(--cream); }
+.tile-peri { background: var(--peri); }
+.tile-green { background: var(--green); color: var(--cream); }
+@media (max-width: 767px) { .desktop-only { display: none !important; } }
+
+/* ---------- Cloud dividers ---------------------------------------------- */
+.cloud { position: absolute; left: 0; width: 100%; height: clamp(90px, 15vw, 220px); pointer-events: none; z-index: 3; }
+.cloud-top { bottom: calc(100% - 2px); }
+.cloud-bottom { top: calc(100% - 2px); transform: scaleY(-1); }
+
+/* =========================================================================
+   1. Hero
+   ========================================================================= */
+.s-hero { background: var(--navy); color: var(--cream); z-index: 1; }
+/* static layout: leave room for the price cloud that overlaps the hero's bottom */
+html:not(.motion) .s-hero { padding-bottom: clamp(120px, 22vw, 320px); }
+.s-hero .scene-stage { height: 100vh; height: 100svh; min-height: 560px; overflow: hidden; }
+.hero-inner { position: relative; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: var(--nav-h) var(--gutter) 22vh; }
+.hero-kicker { position: relative; z-index: 2; font-size: 12px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; opacity: .7; text-align: center; margin: 0 0 18px; max-width: 46ch; }
+.hero-title { position: relative; z-index: 2; font-size: min(13vw, 19vh, 200px); text-align: center; max-width: 9ch; }
+.tiles { position: absolute; inset: var(--nav-h) 0 0; z-index: 3; pointer-events: none; }
+.hero-cone { position: absolute; left: 50%; top: 0; width: 70vw; height: 100%; translate: -50% 0; z-index: 1; opacity: 0;
+  background: linear-gradient(180deg, rgba(255,226,160,.0) 0%, rgba(255,214,150,.55) 55%, rgba(201,210,245,.9) 100%);
+  clip-path: polygon(44% 0, 56% 0, 100% 100%, 0 100%); }
+.scroll-cue { position: absolute; bottom: 18px; right: var(--gutter); z-index: 5; margin: 0; font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; opacity: .7; display: flex; gap: 8px; }
+.scroll-cue span { animation: nudge 1.6s ease-in-out infinite; }
+@keyframes nudge { 50% { transform: translateY(5px); } }
+
+/* =========================================================================
+   2. Price cloud
+   ========================================================================= */
+.s-price { background: var(--peri); color: var(--ink); z-index: 3; }
+.s-price .scene-stage { min-height: 100vh; min-height: 100svh; display: flex; flex-direction: column; justify-content: center; padding: 14vh var(--gutter) 10vh; }
+.s-price .cloud-top { height: clamp(120px, 22vw, 320px); }
+.price-copy { position: relative; z-index: 2; display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 4vw; align-items: end; max-width: 1200px; margin: 0 auto; width: 100%; }
+.price-title { font-size: clamp(52px, 8.5vw, 132px); }
+.price-aside { display: flex; flex-direction: column; gap: 18px; padding-bottom: 1vh; }
+.price-badge { width: 72px; height: 72px; border-radius: 50%; background: #fff; border: 6px solid var(--pink); display: grid; place-items: center; font-family: var(--font-display); font-size: 34px; font-weight: 700; color: var(--pink); box-shadow: 0 8px 0 rgba(236,95,174,.25); transform: rotate(-10deg); }
+.price-aside p { margin: 0; max-width: 34ch; font-size: 15px; font-weight: 500; }
+.falling { position: absolute; left: 50%; top: -4vh; width: min(560px, 80vw); height: 46vh; translate: -50% 0; z-index: 1; pointer-events: none; }
+.fall { position: absolute; }
+.fall:nth-child(1) { left: 12%; top: 30%; } .fall:nth-child(2) { left: 74%; top: 22%; }
+.fall:nth-child(3) { left: 40%; top: 8%; }  .fall:nth-child(4) { left: 22%; top: 62%; }
+.fall:nth-child(5) { left: 60%; top: 48%; } .fall:nth-child(6) { left: 86%; top: 66%; }
+.fall:nth-child(7) { left: 48%; top: 78%; }
+.fall-cube { width: 48px; height: 48px; background: linear-gradient(135deg, #fff6c2, var(--yellow) 50%, var(--orange)); border-radius: 6px; transform: rotate(25deg) skew(-8deg); box-shadow: inset -6px -6px 0 rgba(236,95,174,.5); }
+.fall-ball { width: 46px; height: 46px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #c9d2ff, var(--blue) 55%, #2a1d8a); }
+.fall-pill { width: 84px; height: 30px; border-radius: 15px; background: linear-gradient(90deg, var(--orange), var(--yellow)); transform: rotate(-8deg); box-shadow: inset 0 -5px 0 rgba(0,0,0,.12); }
+.fall-tile { box-shadow: inset 0 -4px 0 rgba(0,0,0,.12), 0 6px 12px rgba(11,58,65,.25); width: 58px; height: 58px; border-radius: 8px; display: grid; place-items: center; font-family: var(--font-display); font-weight: 600; font-size: 28px; transform: rotate(calc(var(--i) * 17deg - 30deg)); }
+
+/* =========================================================================
+   3. Stats
+   ========================================================================= */
+.s-stats { background: var(--navy); color: var(--cream); z-index: 2; }
+.s-stats .scene-stage { min-height: 100vh; min-height: 100svh; display: grid; place-items: center; padding: 18vh var(--gutter) 12vh; overflow: hidden; }
+.symbol-pattern { position: absolute; inset: -40px; display: grid; grid-template-columns: repeat(auto-fill, 120px); gap: 10px; opacity: .06; pointer-events: none; }
+.symbol-pattern span { width: 100px; height: 100px; border-radius: 50%; border: 3px solid var(--cream); display: grid; place-items: center; font-family: var(--font-display); font-size: 34px; }
+.stats-grid { position: relative; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0; width: min(760px, 100%); }
+.stat-card {
+  position: relative; display: flex; align-items: flex-start; gap: 12px;
+  padding: clamp(16px, 2.2vw, 26px) clamp(16px, 2.4vw, 28px);
+  border-radius: 10px; min-height: clamp(110px, 13vw, 170px);
+  box-shadow: 0 18px 40px -10px rgba(0,0,0,.45);
+}
+/* offset mosaic, each card overlapping its neighbours slightly */
+.stat-card:nth-child(odd) { margin: 0 -14px 0 0; translate: 0 14%; }
+.stat-card:nth-child(even) { margin: -10px 0 -10px 0; z-index: 1; }
+.stat-card:nth-child(3) { margin-left: 8%; }
+.stat-card:nth-child(4) { margin-right: 4%; }
+.stat-card:nth-child(5) { margin-left: 3%; }
+.stat-value { font-family: var(--font-display); font-weight: 600; font-size: clamp(56px, 8vw, 112px); line-height: .85; letter-spacing: -.02em; }
+.stat-side { display: flex; flex-direction: column; gap: 6px; padding-top: 4px; min-width: 0; }
+.stat-unit { font-family: var(--font-display); font-weight: 500; font-size: clamp(18px, 2.2vw, 30px); line-height: 1; }
+.stat-caption { font-size: clamp(11px, 1vw, 13px); line-height: 1.3; opacity: .9; max-width: 22ch; }
+.stat-pink { background: var(--pink); color: #fff; }
+.stat-orange { background: var(--orange); color: #fff; }
+.stat-blue { background: var(--blue); color: #fff; }
+.stat-yellow { background: var(--yellow); color: var(--ink); }
+.stat-peri { background: var(--peri); color: var(--ink); }
+.stat-cream { background: var(--cream); color: var(--ink); }
+
+/* =========================================================================
+   4. Did you know?
+   ========================================================================= */
+.s-dyk { background: var(--green); color: var(--cream); z-index: 3; }
+.s-dyk .scene-stage { min-height: 100vh; min-height: 100svh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 10vh var(--gutter) 0; overflow: hidden; gap: 2vh; }
+.dyk-diver { width: clamp(110px, 13vw, 190px); }
+.dyk-copy { position: relative; z-index: 2; max-width: 980px; }
+.dyk-kicker { font-size: clamp(44px, 6.5vw, 96px); margin-bottom: 2vh; }
+.dyk-fact { font-family: var(--font-display); font-weight: 600; font-size: clamp(28px, 4vw, 58px); line-height: 1.04; letter-spacing: -.01em; margin: 0 auto; max-width: 24ch; }
+.dyk-foot { font-size: 12px; opacity: .7; margin: 2vh 0 0; }
+.dyk-pool { width: min(1100px, 120vw); margin-top: auto; }
+.dyk-pool svg { width: 100%; height: auto; }
+
+/* =========================================================================
+   5. Roast: headline + horizontal cards
+   ========================================================================= */
+.s-roast { background: var(--navy); color: var(--cream); z-index: 4; }
+.s-roast .scene-stage { padding: 14vh 0 12vh; }
+.roast-head { display: grid; place-items: center; text-align: center; min-height: 50vh; padding: 0 var(--gutter); }
+.roast-title { font-size: clamp(52px, 8vw, 130px); max-width: 11ch; }
+.roast-track { display: flex; gap: clamp(14px, 2vw, 28px); align-items: flex-start; overflow-x: auto; scroll-snap-type: x mandatory; padding: 4vh var(--gutter) 3vh; -webkit-overflow-scrolling: touch; }
+.roast-card {
+  flex: 0 0 clamp(250px, 26vw, 360px); scroll-snap-align: center;
+  background: #fff; color: var(--ink); border-radius: 10px; padding: 22px 22px 24px;
+  box-shadow: 0 24px 50px -16px rgba(0,0,0,.5);
+}
+.roast-card.is-low { margin-top: 8vh; }
+.roast-art { aspect-ratio: 200 / 170; margin: 0 auto 12px; width: 82%; }
+.roast-art svg { width: 100%; height: 100%; }
+.roast-title { /* card title */ }
+.roast-card .roast-title { font-family: var(--font-body); font-weight: 500; font-size: clamp(28px, 2.8vw, 38px); line-height: 1; letter-spacing: -.03em; margin: 0 0 10px; }
+.roast-text { margin: 0; font-size: 14px; line-height: 1.4; opacity: .85; }
+.roast-end { flex: 0 0 100vw; background: var(--peri); color: var(--ink); display: none; }
+
+/* =========================================================================
+   6. Havoc
+   ========================================================================= */
+.s-havoc { background: var(--peri); color: var(--ink); z-index: 4; }
+.s-havoc .scene-stage { padding: 6vh var(--gutter) 6vh; }
+.havoc-static-title { font-size: clamp(48px, 7vw, 110px); max-width: 12ch; margin-bottom: 2vh; }
+.campus-wrap { position: relative; width: min(1100px, 100%); margin: 0 auto; aspect-ratio: 1000 / 800; }
+.campus-wrap svg { width: 100%; height: 100%; overflow: hidden; }
+.campus-warning { position: absolute; left: 50%; top: 50%; z-index: 3; width: 16%; translate: -50% -55%; transform: rotate(8deg); filter: drop-shadow(0 10px 14px rgba(0,0,0,.3)); }
+.campus-warning svg { width: 100%; height: auto; }
+.campus-center { position: absolute; left: 50%; bottom: 3%; translate: -50% 0; z-index: 3; margin: 0; padding: 8px 14px; background: var(--navy); color: var(--cream); border-radius: 99px; font-size: clamp(11px, 1.3vw, 15px); font-weight: 700; white-space: nowrap; }
+.campus-legend { list-style: none; counter-reset: hs; padding: 0; margin: 4vh auto 0; max-width: 640px; display: none; gap: 10px; }
+.campus-legend li { counter-increment: hs; position: relative; padding: 12px 14px 12px 52px; background: #fff; border-radius: 12px; font-size: 14px; }
+.campus-legend li::before { content: counter(hs); position: absolute; left: 12px; top: 10px; width: 28px; height: 28px; border-radius: 50%; background: var(--navy); color: var(--cream); display: grid; place-items: center; font-weight: 800; font-size: 14px; }
+.s-havoc .cloud-bottom { color: var(--peri); }
+@media (max-width: 767px) {
+  .hotspot-label { display: none; }
+  .campus-legend { display: grid; }
+  .campus-center { position: static; translate: none; display: table; margin: 10px auto 0; white-space: normal; text-align: center; }
+}
+
+/* =========================================================================
+   7. Memories (the soft turn)
+   ========================================================================= */
+.s-memories { position: relative; z-index: 3; background: var(--navy); color: var(--cream); padding: 22vh var(--gutter) 18vh; }
+.mem-head .scene-stage { min-height: 70vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+.mem-title { font-size: clamp(52px, 9vw, 150px); max-width: 12ch; }
+.mem-sub { font-family: var(--font-display); font-weight: 500; font-size: clamp(22px, 3vw, 40px); margin: 3vh 0 0; color: var(--peri); }
+.mem-grid { display: grid; align-items: start; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(14px, 2.5vw, 34px); max-width: 1200px; margin: 10vh auto; }
+.memory { margin: 0; background: var(--cream); color: var(--ink); padding: 10px 10px 14px; border-radius: 4px; transform: rotate(var(--tilt)); box-shadow: 0 24px 40px -18px rgba(0,0,0,.6); }
+.memory:nth-child(3n+2) { margin-top: 8vh; }
+.memory img { width: 100%; height: auto; border-radius: 2px; }
+.memory-empty { width: 100%; aspect-ratio: 4 / 5; border-radius: 2px; }
+.memory-empty { display: grid; place-content: center; text-align: center; gap: 6px; background: repeating-linear-gradient(135deg, var(--peri) 0 14px, #d6ddf8 14px 28px); color: var(--ink); }
+.memory-empty span { font-size: 30px; }
+.memory-empty small { font-size: 11px; font-weight: 600; opacity: .7; padding: 0 10px; }
+.memory figcaption { font-size: 14px; line-height: 1.3; margin-top: 10px; font-weight: 500; }
+.mem-passage { max-width: 34ch; margin: 0 auto; font-family: var(--font-display); font-weight: 500; font-size: clamp(24px, 2.6vw, 36px); line-height: 1.25; letter-spacing: -.005em; }
+.mem-passage p { margin: 0 0 1.1em; }
+.mem-passage p:last-child { color: var(--yellow); }
+.s-memories .placeholder-mark { font-family: var(--font-body); font-size: .6em; }
+
+/* =========================================================================
+   8. Legacy CTA
+   ========================================================================= */
+.s-legacy { position: relative; z-index: 3; background: var(--peri); color: var(--ink); padding: 10vh var(--gutter) 4vh; }
+.legacy-head { text-align: center; max-width: 900px; margin: 0 auto 6vh; }
+.legacy-title { font-size: clamp(52px, 8vw, 130px); }
+.legacy-head p { max-width: 50ch; margin: 2vh auto 0; font-size: 16px; }
+.cta-row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(10px, 1.6vw, 22px); max-width: 1100px; margin: 0 auto; }
+.cta-card { display: flex; flex-direction: column; text-decoration: none; border-radius: 10px; padding: 24px 22px 22px; min-height: 360px; box-shadow: 0 24px 50px -24px rgba(11,58,65,.5); transition: transform .2s; }
+.cta-card:hover { transform: translateY(-6px) rotate(-.6deg); }
+.cta-white { background: #fff; color: var(--ink); }
+.cta-green { background: var(--green); color: var(--cream); }
+.cta-art { width: 70%; margin: 0 auto 10px; aspect-ratio: 200 / 170; }
+.cta-art svg { width: 100%; height: 100%; }
+.cta-card h3 { font-family: var(--font-body); font-weight: 500; letter-spacing: -.03em; font-size: clamp(28px, 2.6vw, 36px); line-height: 1; margin: auto 0 10px; }
+.cta-card p { margin: 0 0 16px; font-size: 14px; opacity: .85; }
+.cta-go { font-weight: 800; font-size: 14px; }
+
+/* =========================================================================
+   Mobile
+   ========================================================================= */
+@media (max-width: 767px) {
+  .hero-title { font-size: clamp(58px, 17vw, 96px); }
+  .hero-inner { padding-bottom: 26vh; }
+  .hero-kicker { z-index: 5; text-shadow: 0 1px 8px var(--navy), 0 0 2px var(--navy); }
+    .price-copy { grid-template-columns: 1fr; }
+  .stats-grid { grid-template-columns: 1fr; width: min(420px, 100%); }
+  .stat-card:nth-child(n) { translate: none; margin: -12px 0 0; }
+  .stat-card:nth-child(odd) { margin-right: 10%; }
+  .stat-card:nth-child(even) { margin-left: 10%; }
+  .stat-card:first-child { margin-top: 0; }
+  .roast-card { flex-basis: 78vw; }
+  .roast-card.is-low { margin-top: 4vh; }
+  .mem-grid { grid-template-columns: 1fr; gap: 28px; max-width: 460px; }
+  .memory:nth-child(n) { margin-top: 0; }
+  .cta-row { grid-template-columns: 1fr; }
+  .cta-card { min-height: 0; }
+  .cta-art { width: 46%; }
+}
+
+/* =========================================================================
+   Motion layout (html.motion is set by motion.js only when GSAP loaded and
+   the user hasn't asked for reduced motion). Section heights and overlaps are
+   set inline by motion.js; here the stages become sticky full-screen frames.
+   ========================================================================= */
+.motion .scene-stage { position: sticky; top: 0; height: 100vh; height: 100svh; min-height: 0; overflow: hidden; }
+.motion .reveal .c { will-change: opacity; }
+
+/* Hero */
+.motion 
+/* Price: stage centres its copy; cloud mound rises over the stuck hero */
+.motion .s-price .scene-stage { display: flex; padding-top: 22vh; }
+.motion .s-price .falling { top: 0; }
+
+/* Stats */
+.motion .s-stats .scene-stage { padding: 0 var(--gutter); }
+.motion .stat-card { will-change: transform; }
+
+/* Did you know: diver up top, copy centred, pool rising from the bottom */
+.motion .s-dyk .scene-stage { display: block; padding: 0; }
+.motion .dyk-diver { position: absolute; left: 50%; top: 6vh; translate: -50% 0; }
+.motion .dyk-copy { position: absolute; left: 50%; top: 50%; translate: -50% -50%; width: min(980px, 100% - 2 * var(--gutter)); }
+.motion .dyk-pool { position: absolute; left: 50%; bottom: 0; translate: -50% 0; margin: 0; }
+
+/* Roast: headline centred behind a horizontally moving track */
+.motion .s-roast .scene-stage { padding: 0; }
+.motion .roast-head { position: absolute; inset: 0; min-height: 0; }
+.motion .roast-track { position: absolute; top: 0; left: 100vw; width: max-content; height: 100%; overflow: visible; padding: 0; scroll-snap-type: none; align-items: center; will-change: transform; }
+.motion .roast-card { margin-top: -6vh; }
+.motion .roast-card.is-low { margin-top: 10vh; }
+.motion .roast-end { display: block; position: relative; flex: 0 0 100vw; align-self: stretch; margin-left: 12vw; padding: 12vh var(--gutter) 0; }
+.motion .havoc-title { font-size: clamp(48px, 7vw, 110px); max-width: 12ch; color: var(--ink); }
+
+/* Havoc: scene fills the stage */
+.motion .havoc-static-title { display: none; }
+.motion .s-havoc .scene-stage { padding: 4vh var(--gutter); display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.motion .campus-wrap { width: min(100%, 118vh); }
+
+/* Soft turn */
+.motion .mem-head .scene-stage { min-height: 0; }
+
+@media (max-width: 767px) {
+  .motion .roast-card { margin-top: -4vh; }
+  .motion .roast-card.is-low { margin-top: 6vh; }
+  .motion .roast-end { margin-left: 8vw; }
+    .motion .s-havoc .scene-stage { justify-content: flex-start; padding-top: 10vh; }
+  .motion .campus-wrap { width: 100%; }
+  .motion .campus-legend { margin-top: 2vh; gap: 6px; }
+  .motion .campus-legend li { padding: 8px 10px 8px 44px; font-size: 13px; }
+  .motion .campus-legend li::before { width: 24px; height: 24px; top: 8px; left: 10px; font-size: 12px; }
+  .motion .dyk-diver { top: 9vh; width: 110px; }
+  .motion .dyk-pool { width: 170vw; }
+}
