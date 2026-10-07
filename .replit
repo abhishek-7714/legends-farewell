@@ -1,9 +1,8 @@
-modules = ["nodejs-20", "postgresql-16"]
+# Node only. The database is Replit's managed PostgreSQL (Database tool),
+# reached through DATABASE_URL, so no local Postgres server is installed here.
+modules = ["nodejs-20"]
 run = "npm start"
 entrypoint = "server/index.js"
-
-[nix]
-channel = "stable-24_05"
 
 [deployment]
 run = ["npm", "start"]
